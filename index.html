@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>编程挑战 Programming Challenge</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+
+  <!-- 1. 开始 -->
+  <section id="screen-start" class="screen active">
+    <div class="logo-mark big">&lt;/&gt;</div>
+    <h1 class="logo">编程挑战</h1>
+    <p class="logo-en">PROGRAMMING CHALLENGE</p>
+    <p class="tagline">思考。调试。解决。</p>
+    <button id="btn-start" class="btn btn-primary btn-xl">开始挑战</button>
+  </section>
+
+  <!-- 2. 输入名字 -->
+  <section id="screen-name" class="screen">
+    <h2 class="screen-title">输入你的名字</h2>
+    <input id="input-name" class="text-input name-input" type="text" maxlength="20" autocomplete="off" placeholder="你的名字">
+    <p id="name-error" class="error-text" hidden>请先输入名字再开始。</p>
+    <button id="btn-name-start" class="btn btn-primary btn-xl">开始</button>
+  </section>
+
+  <!-- 3. 游戏 -->
+  <section id="screen-game" class="screen">
+    <header class="hud">
+      <div class="hud-left">
+        <div class="logo-mark">&lt;/&gt;</div>
+        <div>
+          <div class="hud-title">编程挑战</div>
+          <div class="hud-player">玩家：<strong id="hud-player"></strong></div>
+        </div>
+      </div>
+      <ol class="levels" id="levels">
+        <li data-level="easy"><span class="dot"></span><span>简单</span></li>
+        <li data-level="medium"><span class="dot"></span><span>中等</span></li>
+        <li data-level="hard"><span class="dot"></span><span>困难</span></li>
+      </ol>
+      <div class="chips">
+        <div class="chip"><small>已做题数</small><b id="hud-done">0</b></div>
+        <div class="chip"><small>错误</small><b id="hud-mistakes">0</b></div>
+        <div class="chip timer"><small>时间</small><b id="hud-time">00:00</b></div>
+      </div>
+    </header>
+
+    <article class="card" id="question-card" data-level="easy">
+      <div class="watermark" id="q-watermark">简单</div>
+      <div class="q-grid">
+        <div class="q-text">
+          <h2 class="q-title" id="q-title">第一题</h2>
+          <div id="q-info"></div>
+        </div>
+        <div class="q-side">
+          <div id="q-body"></div>
+          <div class="q-images" id="q-images"></div>
+        </div>
+      </div>
+
+      <div id="hint-box" class="hint-box"></div>
+      <div class="actions">
+        <button id="btn-hint" class="btn btn-ghost">💡 提示</button>
+        <button id="btn-submit" class="btn btn-primary">提交答案</button>
+      </div>
+
+      <div id="feedback" class="feedback" hidden>
+        <div class="fb-title"></div>
+        <div class="fb-sub"></div>
+      </div>
+    </article>
+  </section>
+
+  <!-- 4. 完成 + 排行榜 -->
+  <section id="screen-complete" class="screen">
+    <h2 class="screen-title big">挑战完成！</h2>
+    <p class="great" id="complete-msg"></p>
+    <div class="result-wrap">
+      <div class="stats">
+        <div class="stat"><div class="stat-label">用时</div><div class="stat-value" id="res-time">00:00</div></div>
+        <div class="stat"><div class="stat-label">错误次数</div><div class="stat-value" id="res-mistakes">0</div></div>
+        <div class="stat"><div class="stat-label">使用提示</div><div class="stat-value" id="res-hints">0</div></div>
+      </div>
+      <div class="board">
+        <h3>🏆 排行榜</h3>
+        <table>
+          <thead><tr><th>名次</th><th>玩家</th><th>用时</th><th>错误</th><th>提示</th></tr></thead>
+          <tbody id="board-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <button id="btn-again" class="btn btn-primary btn-xl">再玩一次</button>
+    </div>
+  </section>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>

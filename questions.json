@@ -1,0 +1,137 @@
+{
+  "questions": {
+    "easy": [
+      {
+        "id": "e1",
+        "type": "sequence",
+        "difficulty": "easy",
+        "problem": "制作一个简单的 LED 控制程序。\n\n按下按钮后：\n1. LED 亮起；\n2. 等待 2 秒；\n3. LED 熄灭。\n\n请把指令排成正确的顺序。",
+        "code": [
+          "if buttonPressed:",
+          "    turnOnLED",
+          "    wait 2 seconds",
+          "    turnOffLED"
+        ],
+        "answer": [
+          "if buttonPressed:",
+          "    turnOnLED",
+          "    wait 2 seconds",
+          "    turnOffLED"
+        ],
+        "image": "tcProgrammingApp/Images/e1.png",
+        "hint": "思考每个指令的功能，并根据题目要求安排执行顺序。"
+      },
+      {
+        "id": "e2",
+        "type": "fill",
+        "difficulty": "easy",
+        "problem": "按钮控制 LED。按下按钮时，LED 应该亮起。",
+        "code": [
+          "if buttonPressed:",
+          "    *turnOnLED"
+        ],
+        "choices": [
+          "turnOnLED",
+          "turnOffLED",
+          "wait 2 seconds",
+          "turnOnBuzzer",
+          "turnOffBuzzer"
+        ],
+        "answer": [
+          "turnOnLED"
+        ],
+        "image": "tcProgrammingApp/Images/e2.png",
+        "hint": "先看题目要求按钮按下后 LED 应该发生什么变化。"
+      }
+    ],
+    "medium": [
+      {
+        "id": "m1",
+        "type": "debug",
+        "difficulty": "medium",
+        "problem": "制作一个自动门。\n\n要求：\n- 按下按钮 → 门打开；\n- 等待 3 秒；\n- 门关闭；\n- 没有按下按钮 → 门保持关闭。\n\n以下程序有错误。请选择需要修改的代码行。",
+        "code": [
+          "if buttonPressed:",
+          "    openDoor",
+          "    closeDoor",
+          "    wait 3 seconds",
+          "else:",
+          "    closeDoor"
+        ],
+        "answer": [
+          "    closeDoor",
+          "    wait 3 seconds"
+        ],
+        "image": "tcProgrammingApp/Images/m1.png",
+        "hint": "按钮按下后，动作应该按照什么时间顺序发生？"
+      },
+      {
+        "id": "m2",
+        "type": "sequence",
+        "difficulty": "medium",
+        "problem": "制作一个自动夜灯。\n\n环境昏暗时：LED 亮起。\n\n环境明亮时：LED 熄灭。\n\n请把指令排成正确的顺序。",
+        "code": [
+          "if dark:",
+          "    turnOnLED",
+          "else:",
+          "    turnOffLED"
+        ],
+        "answer": [
+          "if dark:",
+          "    turnOnLED",
+          "else:",
+          "    turnOffLED"
+        ],
+        "image": "tcProgrammingApp/Images/m2.png",
+        "hint": "必须先知道环境的光线状态，才能进行判断。"
+      }
+    ],
+    "hard": [
+      {
+        "id": "h1",
+        "type": "debug",
+        "difficulty": "hard",
+        "problem": "制作一个教室火灾警报器。\n\n正常情况下：红色 LED 和蜂鸣器关闭；\n\n检测到烟雾：红色 LED 和蜂鸣器开启；\n\n以下程序有错误。请选择需要修改的代码行。",
+        "code": [
+          "turnOffRedLED",
+          "turnOffBuzzer",
+          "if smokeDetected:",
+          "    turnOnRedLED",
+          "    turnOnBuzzer"
+        ],
+        "answer": [
+          "turnOffRedLED",
+          "turnOffBuzzer"
+        ],
+        "image": "tcProgrammingApp/Images/h1.png",
+        "hint": "想象当有烟雾的时候，程序进行，红色LED和蜂鸣器状态将会如何？"
+      },
+      {
+        "id": "h2",
+        "type": "sequence",
+        "difficulty": "hard",
+        "problem": "制作一个智能教室风扇。\n\n1. 如果温度 ≥ 30°C：再检测教室里是否有人；\n   1. 有人 → 风扇开启；\n   2. 没有人 → 风扇关闭；\n2. 如果温度 < 30°C → 风扇关闭。\n\n请把指令排成正确的顺序。",
+        "code": [
+          "if temperature >= 30:",
+          "    if peopleDetected:",
+          "        turnOnFan",
+          "    else:",
+          "        turnOffFan",
+          "else:",
+          "    turnOffFan"
+        ],
+        "answer": [
+          "if temperature >= 30:",
+          "    if peopleDetected:",
+          "        turnOnFan",
+          "    else:",
+          "        turnOffFan",
+          "else:",
+          "    turnOffFan"
+        ],
+        "image": "tcProgrammingApp/Images/h2.png",
+        "hint": "先判断温度，再决定是否需要检测有没有人。"
+      }
+    ]
+  }
+}
